@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algolytic Data Solutions</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <meta
+      name="description"
+      content="Algolytic Data Solutions - Revolutionizing Urban Mobility Through Data Intelligence"
+    />
+    <meta
+      name="keywords"
+      content="Traffic Analytics, Data Analytics, Data Collection, Urban Mobility, Predictive Analytics"
+    />
+    <meta name="author" content="Algolytic Data Solutions" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+
+    <meta property="og:title" content="Algolytic Data Solutions" />
+    <meta
+      property="og:description"
+      content="Empower your organization with real-time traffic insights and predictive analytics for smarter urban planning."
+    />
+    <meta property="og:image" content="path/to/image.jpg" />
+    <meta property="og:url" content="https://www.algolytic.com" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <style>
+      .scroll-down-arrow {
+        position: center;
+        bottom: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        transition: color 0.3s;
+      }
+
+      .scroll-down-arrow:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+
+      .scroll-down-arrow .arrow-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+        padding: 0.5rem;
+        border-radius: 9999px;
+        transition: background-color 0.3s;
+      }
+
+      .scroll-down-arrow:hover .arrow-container {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(-25%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+
+      .scroll-down-arrow {
+        animation: bounce 1s infinite;
+      }
+      .scroll-mount {
+        position: relative;
+        height: 120px; /* Create space between CTA and scroll arrow */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Update scroll arrow animation to maintain horizontal centering */
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(-25%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <div class="top-bar-contact">
+          <span>Tel: +91 99161-97069</span>
+          <span>Email: kripa@algolytic.com</span>
+        </div>
+        <div class="top-bar-right">
+          <a href="connect.html#support">Support</a>
+          <a href="connect.html#contacts">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo" class="logo-image" />
+            <span class="logo-text">ALGOLYTIC</span>
+          </a>
+        </div>
+        <div class="nav-menu">
+          <div class="nav-item">
+            <a href="services.html">SERVICES</a>
+            <div class="dropdown">
+              <div class="dropdown-tabs">
+                <div class="dropdown-tab active" data-tab="traffiSc">
+                  <a href="traffic-analytics.html" class="tab-link"
+                    >Traffic Analytics</a
+                  >
+                </div>
+                <div class="dropdown-tab" data-tab="data">
+                  <a href="data-analytics.html" class="tab-link"
+                    >Data Analytics</a
+                  >
+                </div>
+                <div class="dropdown-tab" data-tab="collection">
+                  <a href="data-collection.html" class="tab-link"
+                    >Data Collection</a
+                  >
+                </div>
+              </div>
+              <div class="dropdown-content active" data-content="traffic">
+                <a href="traffic-analytics.html#junction" class="dropdown-item">
+                  <strong>Junction Turning Counts</strong>
+                  <span>Optimize traffic flow at junctions</span>
+                </a>
+                <a
+                  href="traffic-analytics.html#intersection"
+                  class="dropdown-item"
+                >
+                  <strong>Intersection Counts</strong>
+                  <span>Monitor vehicle and pedestrian movement</span>
+                </a>
+                <a
+                  href="traffic-analytics.html#roundabout"
+                  class="dropdown-item"
+                >
+                  <strong>Roundabout Analysis</strong>
+                  <span>Enhance traffic flow performance</span>
+                </a>
+                <a
+                  href="traffic-analytics.html#link-counts"
+                  class="dropdown-item"
+                >
+                  <strong>Link Counts</strong>
+                  <span>Analyze traffic volume by segment</span>
+                </a>
+                <a href="traffic-analytics.html#queuing" class="dropdown-item">
+                  <strong>Queuing Analysis</strong>
+                  <span>Identify and resolve bottlenecks</span>
+                </a>
+                <a
+                  href="traffic-analytics.html#pedestrian"
+                  class="dropdown-item"
+                >
+                  <strong>Pedestrian Counts</strong>
+                  <span>Design safer walkways</span>
+                </a>
+              </div>
+              <div class="dropdown-content" data-content="data">
+                <a href="data-analytics.html#customer" class="dropdown-item">
+                  <strong>Customer Analytics</strong>
+                  <span>Understand behavior and preferences</span>
+                </a>
+                <a href="data-analytics.html#marketing" class="dropdown-item">
+                  <strong>Marketing Analytics</strong>
+                  <span>Optimize campaign effectiveness</span>
+                </a>
+                <a href="data-analytics.html#sales" class="dropdown-item">
+                  <strong>Sales Analytics</strong>
+                  <span>Boost revenue growth</span>
+                </a>
+              </div>
+              <div class="dropdown-content" data-content="collection">
+                <a
+                  href="data-collection.html#quantitative"
+                  class="dropdown-item"
+                >
+                  <strong>Quantitative Data</strong>
+                  <span>Large-scale numerical analysis</span>
+                </a>
+                <a
+                  href="data-collection.html#qualitative"
+                  class="dropdown-item"
+                >
+                  <strong>Qualitative Data</strong>
+                  <span>In-depth insights and research</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="about-company.html">COMPANY</a>
+            <div class="dropdown">
+              <div class="dropdown-content active">
+                <a href="about-company.html#about" class="dropdown-item">
+                  <strong>About Us</strong>
+                  <span>Our mission and values</span>
+                </a>
+                <a href="about-company.html#team" class="dropdown-item">
+                  <strong>Leadership Team</strong>
+                  <span>Meet our experts</span>
+                </a>
+                <a href="careers.html" class="dropdown-item">
+                  <strong>Careers</strong>
+                  <span>Join our growing team</span>
+                </a>
+                <a href="about-company.html#news" class="dropdown-item">
+                  <strong>News & Press</strong>
+                  <span>Latest company updates</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a href="resources.html">RESOURCES</a>
+            <div class="dropdown">
+              <div class="dropdown-content active">
+                <a href="resources.html" class="dropdown-item">
+                  <strong>Blog</strong>
+                  <span>Industry insights and updates</span>
+                </a>
+                <a href="resources.html" class="dropdown-item">
+                  <strong>Case Studies</strong>
+                  <span>Client success stories</span>
+                </a>
+                <a href="resources.html" class="dropdown-item">
+                  <strong>Whitepapers</strong>
+                  <span>Technical research and analysis</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-background"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-container">
+        <div class="hero-content-grid">
+          <!-- Left Content -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Next-Gen Traffic Analytics
+            </div>
+
+            <h1 class="hero-title">
+              Transform Urban Mobility with
+              <span style="font-family: 'Righteous', sans-serif"
+                >ALGOLYTIC</span
+              >
+              Data Intelligence
+            </h1>
+
+            <p class="hero-description">
+              Empower smart cities with real-time traffic insights and
+              predictive analytics. Our enterprise-grade solutions drive
+              efficient urban planning and seamless traffic management.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#demo" class="cta-button cta-primary">
+                Schedule a Demo
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class="ml-2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="#contact" class="cta-button cta-secondary">
+                Speak with Expert
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="hero-right">
+            <!-- Recognition Card - Single Column -->
+            <div class="recognition-card">
+              <div class="recognition-header">
+                <div class="recognition-logos">
+                  <img
+                    src="images/startup-logo.png"
+                    alt="Startup India Logo"
+                    class="recognition-logo"
+                  />
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/1200px-Emblem_of_India.svg.png"
+                    alt="DPIIT Logo"
+                    class="recognition-logo"
+                  />
+                </div>
+              </div>
+              <div class="recognition-content">
+                <h3>Government Recognized Innovation Leader</h3>
+                <p>
+                  Officially recognized by DPIIT for excellence in urban
+                  mobility solutions
+                </p>
+                <div class="recognition-badges">
+                  <span class="badge">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    DPIIT Certified
+                  </span>
+                  <span class="badge">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    Startup India Registered
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Cards - Two Columns -->
+            <div class="service-cards-grid">
+              <!-- Service Card 1 -->
+              <div class="service-card">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5"
+                    />
+                  </svg>
+                </div>
+                <h3 class="service-title">Traffic Analytics</h3>
+                <p class="service-description">
+                  Advanced junction analysis and comprehensive traffic flow
+                  optimization with real-time monitoring systems.
+                </p>
+                <div class="service-features">
+                  <span class="feature-tag">Junction Analysis</span>
+                  <span class="feature-tag">Flow Optimization</span>
+                </div>
+              </div>
+
+              <!-- Service Card 2 -->
+              <div class="service-card">
+                <div class="service-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                    />
+                  </svg>
+                </div>
+                <h3 class="service-title">Data Collection</h3>
+                <p class="service-description">
+                  Comprehensive data collection and advanced analytics for
+                  actionable urban mobility insights.
+                </p>
+                <div class="service-features">
+                  <span class="feature-tag">Data Insights</span>
+                  <span class="feature-tag">Smart Collection</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="scroll-arrow-mount" class="scroll-mount"></div> -->
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Why Choose Us</span>
+          <h2 class="section-title">Why Algolytic</h2>
+          <p class="section-description">
+            Delivering proven traffic analytics solutions with unmatched
+            accuracy and expertise for organizations worldwide
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1: Industry Expertise -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h3>Industry Excellence</h3>
+              <p>
+                Trusted by leading transportation authorities with over 8 years
+                of specialized expertise in traffic analytics.
+              </p>
+              <div class="feature-metric">
+                <span class="metric-value">350+</span>
+                <span class="metric-label">Projects Delivered</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Analysis Speed -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h3>Rapid Analysis</h3>
+              <p>
+                Delivering actionable traffic insights within hours, enabling
+                quick decision-making for urban planners.
+              </p>
+              <div class="feature-metric">
+                <span class="metric-value">24hr</span>
+                <span class="metric-label">Turnaround Time</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Proven Results -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5"
+                />
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h3>Proven Results</h3>
+              <p>
+                Consistently delivering high-accuracy traffic analysis with
+                proven methodologies and quality assurance.
+              </p>
+              <div class="feature-metric">
+                <span class="metric-value">99.8%</span>
+                <span class="metric-label">Accuracy Rate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Global Presence -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                />
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h3>Global Expertise</h3>
+              <p>
+                Serving transportation authorities across major cities worldwide
+                with localized traffic analysis solutions.
+              </p>
+              <div class="feature-metric">
+                <span class="metric-value">25+</span>
+                <span class="metric-label">Countries Served</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Services Page -->
+    <section class="key-services-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Our Expertise</span>
+          <h2 class="section-title">Key Services</h2>
+          <p class="section-description">
+            Comprehensive traffic analytics and urban mobility solutions for
+            modern cities
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: Traffic Analytics -->
+          <div class="card-flip">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/cards/1.jpg" alt="Traffic Analytics" />
+                <span class="tag">Analytics</span>
+                <div class="content-wrapper">
+                  <h3>Traffic Analytics</h3>
+                  <div class="feature-tags">
+                    <span>Advanced Monitoring</span>
+                    <span class="dot">•</span>
+                    <span>Real-time Insights</span>
+                  </div>
+                  <p>
+                    Comprehensive traffic flow analysis and optimization
+                    solutions.
+                  </p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h4>Core Features</h4>
+                <ul>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Vehicle count & classification</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Speed & flow analysis</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Occupancy tracking</span>
+                  </li>
+                </ul>
+                <button type="button">Learn More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Predictive Analytics -->
+          <div class="card-flip">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/cards/2.jpg" alt="Predictive Analytics" />
+                <span class="tag">Intelligence</span>
+                <div class="content-wrapper">
+                  <h3>Predictive Analytics</h3>
+                  <div class="feature-tags">
+                    <span>Strategic Planning</span>
+                    <span class="dot">•</span>
+                    <span>Pattern Recognition</span>
+                  </div>
+                  <p>
+                    Data-driven solutions for traffic pattern prediction and
+                    optimization.
+                  </p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h4>Core Capabilities</h4>
+                <ul>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Pattern forecasting analysis</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Peak hour optimization</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Performance reporting</span>
+                  </li>
+                </ul>
+                <button type="button">Learn More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Smart Data Collection -->
+          <div class="card-flip">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/cards/3.jpg" alt="Smart Data Collection" />
+                <span class="tag">Collection</span>
+                <div class="content-wrapper">
+                  <h3>Smart Data Collection</h3>
+                  <div class="feature-tags">
+                    <span>Advanced Sensors</span>
+                    <span class="dot">•</span>
+                    <span>Automated Systems</span>
+                  </div>
+                  <p>
+                    Automated traffic data collection with advanced monitoring
+                    systems.
+                  </p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h4>Collection Methods</h4>
+                <ul>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Video monitoring systems</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Sensor network deployment</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Real-time data processing</span>
+                  </li>
+                </ul>
+                <button type="button">Learn More</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Integration Solutions -->
+          <div class="card-flip">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="images/cards/4.jpg" alt="Integration Solutions" />
+                <span class="tag">Integration</span>
+                <div class="content-wrapper">
+                  <h3>Integration Solutions</h3>
+                  <div class="feature-tags">
+                    <span>Seamless Setup</span>
+                    <span class="dot">•</span>
+                    <span>System Compatibility</span>
+                  </div>
+                  <p>
+                    Complete integration with existing infrastructure and
+                    systems.
+                  </p>
+                </div>
+              </div>
+              <div class="card-back">
+                <h4>Integration Features</h4>
+                <ul>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>System compatibility</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Custom API development</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M20 6L9 17l-5-5"
+                      />
+                    </svg>
+                    <span>Unified dashboard access</span>
+                  </li>
+                </ul>
+                <button type="button">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="blogs-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Latest Updates</span>
+          <h2 class="section-title">Industry Insights</h2>
+          <p class="section-description">
+            Stay informed with our latest thoughts on traffic analytics and
+            urban mobility
+          </p>
+        </div>
+
+        <div class="blogs-slider">
+          <div class="blogs-track">
+            <article class="blog-card">
+              <div class="blog-image">
+                <img src="images/cards/5.jpg" alt="Real-Time Traffic Data" />
+              </div>
+              <div class="blog-content">
+                <div class="blog-category">Traffic Analytics</div>
+                <h3>The Power of Real-Time Traffic Data</h3>
+                <p>
+                  Discover how real-time traffic data is revolutionizing
+                  transportation management and urban planning.
+                </p>
+                <div class="blog-meta">
+                  <span class="date">Jan 16, 2024</span>
+                  <span class="read-time">8 min read</span>
+                </div>
+                <a href="resources/insights/insight-1.html" class="read-more"
+                  >Read more</a
+                >
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-image">
+                <img src="images/cards/6.jpg" alt="Fleet Management" />
+              </div>
+              <div class="blog-content">
+                <div class="blog-category">Fleet Analytics</div>
+                <h3>The Role of Predictive Analytics in Fleet Management</h3>
+                <p>
+                  Learn how predictive analytics is transforming fleet
+                  management and driving efficiency.
+                </p>
+                <div class="blog-meta">
+                  <span class="date">Jan 16, 2024</span>
+                  <span class="read-time">8 min read</span>
+                </div>
+                <a href="resources/insights/insight-2.html" class="read-more"
+                  >Read more</a
+                >
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-image">
+                <img src="images/cards/7.jpg" alt="Route Optimization" />
+              </div>
+              <div class="blog-content">
+                <div class="blog-category">Route Analytics</div>
+                <h3>Data-Driven Route Optimization</h3>
+                <p>
+                  Discover how data-driven route optimization is reducing fuel
+                  consumption for sustainable operations.
+                </p>
+                <div class="blog-meta">
+                  <span class="date">Jan 16, 2024</span>
+                  <span class="read-time">8 min read</span>
+                </div>
+                <a href="resources/insights/insight-3.html" class="read-more"
+                  >Read more</a
+                >
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-image">
+                <img src="images/cards/8.jpg" alt="Traffic Flow Optimization" />
+              </div>
+              <div class="blog-content">
+                <div class="blog-category">Traffic Innovation</div>
+                <h3>Next-Generation Traffic Flow Optimization</h3>
+                <p>
+                  Explore how cutting-edge technologies are revolutionizing
+                  traffic flow optimization for smarter cities.
+                </p>
+                <div class="blog-meta">
+                  <span class="date">Jan 16, 2024</span>
+                  <span class="read-time">10 min read</span>
+                </div>
+                <a href="resources/insights/insight-4.html" class="read-more"
+                  >Read more</a
+                >
+              </div>
+            </article>
+          </div>
+          <button class="slider-arrow prev" aria-label="Previous">←</button>
+          <button class="slider-arrow next" aria-label="Next">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Whitepaper Section -->
+    <section class="whitepaper-section">
+      <div class="container">
+        <div class="whitepaper-content">
+          <div class="whitepaper-text">
+            <span class="section-eyebrow">Latest Research</span>
+            <h2>Download Our Latest Whitepaper</h2>
+            <p>
+              Urban Mobility 2024: The Role of Data Analytics in Smart Cities
+            </p>
+            <ul class="whitepaper-features">
+              <li>
+                Comprehensive analysis of current traffic management trends
+              </li>
+              <li>AI and ML implementation strategies for urban planning</li>
+              <li>Real-world case studies from leading smart cities</li>
+              <li>Future predictions for urban mobility solutions</li>
+            </ul>
+          </div>
+          <div class="whitepaper-form">
+            <form id="download-form">
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Business Email" required />
+              <input type="text" placeholder="Company Name" required />
+              <input type="text" placeholder="Job Title" required />
+              <div class="form-checkbox">
+                <input type="checkbox" id="consent" required />
+                <label for="consent"
+                  >I agree to receive updates and marketing
+                  communications</label
+                >
+              </div>
+              <button type="submit" class="download-btn">
+                Download Whitepaper
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-eyebrow">Get In Touch</span>
+            <h2>Let's Transform Your Urban Mobility Solutions</h2>
+            <p>
+              Ready to revolutionize your traffic management system? Our team of
+              experts is here to help.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+91 99161-97069</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>kripa@algolytic.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg
+                  class="contact-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <h3>Visit Us</h3>
+                  <p>
+                    5114, Prestige Tranquility,<br />Bommenahalli, Bangalore
+                    560049
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contact-form">
+              <div class="form-grid">
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <input type="tel" placeholder="Phone Number" required />
+                <input type="text" placeholder="Company Name" required />
+                <select required>
+                  <option value="">Select Service</option>
+                  <option value="traffic">Traffic Analytics</option>
+                  <option value="data">Data Analytics</option>
+                  <option value="integration">Smart City Integration</option>
+                </select>
+                <input type="text" placeholder="Job Title" required />
+                <textarea placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="/" class="footer-logo">ALGOLYTIC</a>
+            <p>
+              Revolutionizing urban mobility through data intelligence and smart
+              city solutions.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Solutions</h3>
+              <ul>
+                <li><a href="traffic-analytics.html">Traffic Analytics</a></li>
+                <li><a href="data-analytics.html">Data Analytics</a></li>
+                <li><a href="data-collection.html">Data Collection</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#whitepapers">Whitepapers</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <p>&copy; 2024 Algolytic Data Solutions. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+              <a href="#cookies">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Before closing body tag -->
+    <script src="js/contact-form.js"></script>
+    <script>
+      document.addEventListener("scroll", () => {
+        const heroBackground = document.querySelector(".hero-background");
+        const scrolled = window.scrollY;
+        if (heroBackground) {
+          heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+      });
+
+      // Add intersection observer for fade-in animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      // Observe elements
+      document
+        .querySelectorAll(".service-card, .recognition-card")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+    </script>
+
+    <!-- Add the React component script separately -->
+    <script type="text/babel">
+      const ScrollDownArrow = () => {
+        const handleClick = () => {
+          window.scrollBy({
+            top: window.innerHeight * 0.8,
+            behavior: "smooth",
+          });
+        };
+
+        return (
+          <div className="absolute left-1/2 -translate-x-1/2 cursor-pointer animate-bounce">
+            <button
+              onClick={handleClick}
+              className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors duration-300"
+              aria-label="Scroll down"
+            >
+              <span className="text-sm font-medium">Scroll Down</span>
+              <div className="rounded-full bg-white/10 p-3 backdrop-blur-sm hover:bg-white/20 transition-colors duration-300">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </div>
+            </button>
+          </div>
+        );
+      };
+
+      ReactDOM.render(
+        <ScrollDownArrow />,
+        document.getElementById("scroll-arrow-mount")
+      );
+    </script>
+  </body>
+</html>

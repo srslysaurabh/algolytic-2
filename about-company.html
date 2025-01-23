@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Algolytic | Smart Traffic Analytics Solutions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <meta name="description" content="Algolytic is India's leading traffic analytics company, providing AI-powered solutions for smart city traffic management and urban mobility optimization.">
+    <meta name="keywords" content="Traffic Analytics, Smart City Solutions, Urban Mobility, Traffic Data Analysis, AI Traffic Management">
+    <meta name="author" content="Algolytic">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .about-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0A1627 0%, #1A2942 100%);
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, #FF3E3E 0%, #FF7676 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .recognition-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .badge span {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .recognition-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="top-bar-contact">
+                <span>Tel: +91 99161-97069</span>
+                <span>Email: kripa@algolytic.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="connect.html#support">Support</a>
+                <a href="connect.html#contacts">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Logo" class="logo-image">
+                    <span class="logo-text">ALGOLYTIC</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="services.html">SERVICES</a>
+                    <div class="dropdown">
+                        <div class="dropdown-tabs">
+                            <div class="dropdown-tab active" data-tab="traffiSc">
+                                <a href="traffic-analytics.html" class="tab-link">Traffic Analytics</a>
+                            </div>
+                            <div class="dropdown-tab" data-tab="data">
+                                <a href="data-analytics.html" class="tab-link">Data Analytics</a>
+                            </div>
+                            <div class="dropdown-tab" data-tab="collection">
+                                <a href="data-collection.html" class="tab-link">Data Collection</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-content active" data-content="traffic">
+                            <a href="traffic-analytics.html#junction" class="dropdown-item">
+                                <strong>Junction Turning Counts</strong>
+                                <span>Optimize traffic flow at junctions</span>
+                            </a>
+                            <a href="traffic-analytics.html#intersection" class="dropdown-item">
+                                <strong>Intersection Counts</strong>
+                                <span>Monitor vehicle and pedestrian movement</span>
+                            </a>
+                            <a href="traffic-analytics.html#roundabout" class="dropdown-item">
+                                <strong>Roundabout Analysis</strong>
+                                <span>Enhance traffic flow performance</span>
+                            </a>
+                            <a href="traffic-analytics.html#link-counts" class="dropdown-item">
+                                <strong>Link Counts</strong>
+                                <span>Analyze traffic volume by segment</span>
+                            </a>
+                            <a href="traffic-analytics.html#queuing" class="dropdown-item">
+                                <strong>Queuing Analysis</strong>
+                                <span>Identify and resolve bottlenecks</span>
+                            </a>
+                            <a href="traffic-analytics.html#pedestrian" class="dropdown-item">
+                                <strong>Pedestrian Counts</strong>
+                                <span>Design safer walkways</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-content" data-content="data">
+                            <a href="data-analytics.html#customer" class="dropdown-item">
+                                <strong>Customer Analytics</strong>
+                                <span>Understand behavior and preferences</span>
+                            </a>
+                            <a href="data-analytics.html#marketing" class="dropdown-item">
+                                <strong>Marketing Analytics</strong>
+                                <span>Optimize campaign effectiveness</span>
+                            </a>
+                            <a href="data-analytics.html#sales" class="dropdown-item">
+                                <strong>Sales Analytics</strong>
+                                <span>Boost revenue growth</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-content" data-content="collection">
+                            <a href="data-collection.html#quantitative" class="dropdown-item">
+                                <strong>Quantitative Data</strong>
+                                <span>Large-scale numerical analysis</span>
+                            </a>
+                            <a href="data-collection.html#qualitative" class="dropdown-item">
+                                <strong>Qualitative Data</strong>
+                                <span>In-depth insights and research</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about-company.html">COMPANY</a>
+                    <div class="dropdown">
+                        <div class="dropdown-content active">
+                            <a href="about-company.html#about" class="dropdown-item">
+                                <strong>About Us</strong>
+                                <span>Our mission and values</span>
+                            </a>
+                            <a href="about-company.html#team" class="dropdown-item">
+                                <strong>Leadership Team</strong>
+                                <span>Meet our experts</span>
+                            </a>
+                            <a href="careers.html" class="dropdown-item">
+                                <strong>Careers</strong>
+                                <span>Join our growing team</span>
+                            </a>
+                            <a href="about-company.html#news" class="dropdown-item">
+                                <strong>News & Press</strong>
+                                <span>Latest company updates</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="resources.html">RESOURCES</a>
+                    <div class="dropdown">
+                        <div class="dropdown-content active">
+                            <a href="resources.html" class="dropdown-item">
+                                <strong>Blog</strong>
+                                <span>Industry insights and updates</span>
+                            </a>
+                            <a href="resources.html" class="dropdown-item">
+                                <strong>Case Studies</strong>
+                                <span>Client success stories</span>
+                            </a>
+                            <a href="resources.html" class="dropdown-item">
+                                <strong>Whitepapers</strong>
+                                <span>Technical research and analysis</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero flex items-center justify-center min-h-screen">
+        <div class="hero-background"></div>
+        <div class="hero-content container mx-auto px-4 text-center">
+            <!-- Trusted Badge -->
+            <div class="hero-badge inline-flex items-center justify-center gap-2 mb-8 mx-auto">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span>Trusted by Leading Organizations</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="hero-title max-w-4xl mx-auto mb-6 text-center font-['Righteous']">
+                Revolutionizing Urban Mobility Solutions
+            </h1>
+            <p class="hero-description max-w-2xl mx-auto">
+                Pioneering intelligent traffic analytics and smart city solutions with cutting-edge AI technology and real-time data intelligence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Company Overview Section -->
+    <section class="company-overview py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="section-header text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pioneering Traffic Intelligence</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Algolytic is a DPIIT-recognized startup revolutionizing urban mobility through advanced traffic analytics, machine learning, and real-time data intelligence solutions.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+                    <p class="text-gray-600 mb-6">
+                        To revolutionize urban mobility by providing cities and organizations with precise, AI-powered traffic analytics for informed decision-making and sustainable transportation solutions.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+                    <p class="text-gray-600 mb-6">
+                        To be India's foremost traffic intelligence company, making every city smarter and safer through data-driven mobility solutions and innovative traffic management systems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="core-values bg-gray-50 py-24">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="section-header text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    At Algolytic, our values drive our commitment to transforming urban mobility and creating smarter cities across India.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="value-card bg-white rounded-xl shadow-soft p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Innovation</h3>
+                    <p class="text-gray-600">
+                        We continuously innovate in traffic analytics and AI solutions to solve complex urban mobility challenges.
+                    </p>
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-soft p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Precision</h3>
+                    <p class="text-gray-600">
+                        We deliver highly accurate traffic data and analytics that cities and organizations can rely on for critical decisions.
+                    </p>
+                </div>
+                <div class="value-card bg-white rounded-xl shadow-soft p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Impact</h3>
+                    <p class="text-gray-600">
+                        We measure our success by the positive impact our solutions have on urban mobility and citizens' lives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="section-header text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Leadership Team</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Our team combines expertise in traffic engineering, data science, and urban mobility to deliver cutting-edge solutions.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white rounded-xl shadow-soft p-8 text-center">
+                    <img src="https://algolytic.com/images/team/1.jpg" alt="Kripa Murti" class="w-24 h-24 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Kripa Murti</h3>
+                    <p class="text-gray-600 mb-4">CEO & Founder</p>
+                    <p class="text-gray-600">
+                        Former traffic engineer with 10+ years of experience in urban mobility solutions and smart city projects.
+                    </p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white rounded-xl shadow-soft p-8 text-center">
+                    <img src="https://algolytic.com/images/team/2.jpg" alt="Shweta Suma" class="w-24 h-24 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Shweta Suma</h3>
+                    <p class="text-gray-600 mb-4">CTO & Co-founder</p>
+                    <p class="text-gray-600">
+                        AI/ML expert specializing in computer vision and traffic pattern analysis with multiple patents.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section bg-gray-50 py-24">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="section-header text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With Us</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Interested in transforming your city's traffic management? Let's discuss how our solutions can help.
+                </p>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <div class="form-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <input type="text" placeholder="Full Name" required class="p-4 border border-gray-300 rounded-lg">
+                        <input type="email" placeholder="Email Address" required class="p-4 border border-gray-300 rounded-lg">
+                        <input type="tel" placeholder="Phone Number" required class="p-4 border border-gray-300 rounded-lg">
+                        <input type="text" placeholder="Organization Name" required class="p-4 border border-gray-300 rounded-lg">
+                        <select required class="p-4 border border-gray-300 rounded-lg">
+                            <option value="">Select Service</option>
+                            <option value="junction">Junction Analysis</option>
+                            <option value="real-time">Real-time Traffic Monitoring</option>
+                            <option value="smart-signals">Smart Signal Solutions</option>
+                            <option value="consulting">Traffic Consulting</option>
+                        </select>
+                        <input type="text" placeholder="Designation" required class="p-4 border border-gray-300 rounded-lg">
+                        <textarea placeholder="Project Requirements" required class="p-4 border border-gray-300 rounded-lg md:col-span-2"></textarea>
+                    </div>
+                    <button type="submit" class="mt-8 bg-primary-600 text-white py-4 px-8 rounded-lg hover:bg-primary-700 transition-colors">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo text-2xl font-bold">ALGOLYTIC</a>
+                    <p class="text-gray-400 mt-4">Revolutionizing urban mobility through AI-powered traffic intelligence and smart city solutions.</p>
+                    <div class="social-links flex gap-4 mt-6">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 00 4 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 class="text-lg font-bold mb-4">Solutions</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#junction" class="text-gray-400 hover:text-white transition-colors">Junction Analytics</a></li>
+                            <li><a href="#smart-signals" class="text-gray-400 hover:text-white transition-colors">Smart Signals</a></li>
+                            <li><a href="#real-time" class="text-gray-400 hover:text-white transition-colors">Real-time Monitoring</a></li>
+                            <li><a href="#consulting" class="text-gray-400 hover:text-white transition-colors">Traffic Consulting</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="text-lg font-bold mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#careers" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="#partners" class="text-gray-400 hover:text-white transition-colors">Partners</a></li>
+                            <li><a href="#press" class="text-gray-400 hover:text-white transition-colors">Press & Media</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="text-lg font-bold mb-4">Resources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                            <li><a href="#research" class="text-gray-400 hover:text-white transition-colors">Research Papers</a></li>
+                            <li><a href="#blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="#documentation" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom mt-12 border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Algolytic Traffic Solutions. All rights reserved.</p>
+                <div class="legal-links mt-4 space-x-4">
+                    <a href="#privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#cookies" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
