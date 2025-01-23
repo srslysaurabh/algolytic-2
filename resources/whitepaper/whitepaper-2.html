@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Optimizing Public Transportation Systems | Algolytic Data Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="../../js/script.js" defer></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <!-- Chart.js for Data Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to right, #2563eb, #1e40af);
+            z-index: 1000;
+            transition: width 0.2s ease;
+        }
+
+        .chart-container {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .key-stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .key-stat-label {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+
+        .callout-box {
+            background: #1e3a8a;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .callout-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .callout-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="top-bar-contact">
+                <span>Tel: +91 99161-97069</span>
+                <span>Email: kripa@algolytic.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="../../connect.html#support">Support</a>
+                <a href="../../connect.html#contacts">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html" class="logo">
+                    <img src="../../images/logo.png" alt="Logo" class="logo-image">
+                    <span class="logo-text">ALGOLYTIC</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-item">
+                    <a href="../../services.html">SERVICES</a>
+                    <div class="dropdown">
+                        <div class="dropdown-tabs">
+                            <div class="dropdown-tab active" data-tab="traffiSc">
+                                <a href="../../traffic-analytics.html" class="tab-link">Traffic Analytics</a>
+                            </div>
+                            <div class="dropdown-tab" data-tab="data">
+                                <a href="../../data-analytics.html" class="tab-link">Data Analytics</a>
+                            </div>
+                            <div class="dropdown-tab" data-tab="collection">
+                                <a href="../../data-collection.html" class="tab-link">Data Collection</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-content active" data-content="traffic">
+                            <a href="../../traffic-analytics.html#junction" class="dropdown-item">
+                                <strong>Junction Turning Counts</strong>
+                                <span>Optimize traffic flow at junctions</span>
+                            </a>
+                            <a href="../../traffic-analytics.html#intersection" class="dropdown-item">
+                                <strong>Intersection Counts</strong>
+                                <span>Monitor vehicle and pedestrian movement</span>
+                            </a>
+                            <a href="../../traffic-analytics.html#roundabout" class="dropdown-item">
+                                <strong>Roundabout Analysis</strong>
+                                <span>Enhance traffic flow performance</span>
+                            </a>
+                            <a href="../../traffic-analytics.html#link-counts" class="dropdown-item">
+                                <strong>Link Counts</strong>
+                                <span>Analyze traffic volume by segment</span>
+                            </a>
+                            <a href="../../traffic-analytics.html#queuing" class="dropdown-item">
+                                <strong>Queuing Analysis</strong>
+                                <span>Identify and resolve bottlenecks</span>
+                            </a>
+                            <a href="../../traffic-analytics.html#pedestrian" class="dropdown-item">
+                                <strong>Pedestrian Counts</strong>
+                                <span>Design safer walkways</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-content" data-content="data">
+                            <a href="../../data-analytics.html#customer" class="dropdown-item">
+                                <strong>Customer Analytics</strong>
+                                <span>Understand behavior and preferences</span>
+                            </a>
+                            <a href="../../data-analytics.html#marketing" class="dropdown-item">
+                                <strong>Marketing Analytics</strong>
+                                <span>Optimize campaign effectiveness</span>
+                            </a>
+                            <a href="../../data-analytics.html#sales" class="dropdown-item">
+                                <strong>Sales Analytics</strong>
+                                <span>Boost revenue growth</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-content" data-content="collection">
+                            <a href="../../data-collection.html#quantitative" class="dropdown-item">
+                                <strong>Quantitative Data</strong>
+                                <span>Large-scale numerical analysis</span>
+                            </a>
+                            <a href="../../data-collection.html#qualitative" class="dropdown-item">
+                                <strong>Qualitative Data</strong>
+                                <span>In-depth insights and research</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="../../about-company.html">COMPANY</a>
+                    <div class="dropdown">
+                        <div class="dropdown-content active">
+                            <a href="../../about-company.html#about" class="dropdown-item">
+                                <strong>About Us</strong>
+                                <span>Our mission and values</span>
+                            </a>
+                            <a href="../../about-company.html#team" class="dropdown-item">
+                                <strong>Leadership Team</strong>
+                                <span>Meet our experts</span>
+                            </a>
+                            <a href="../../careers.html" class="dropdown-item">
+                                <strong>Careers</strong>
+                                <span>Join our growing team</span>
+                            </a>
+                            <a href="../../about-company.html#news" class="dropdown-item">
+                                <strong>News & Press</strong>
+                                <span>Latest company updates</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="../../resources.html">RESOURCES</a>
+                    <div class="dropdown">
+                        <div class="dropdown-content active">
+                            <a href="../../resources.html" class="dropdown-item">
+                                <strong>Blog</strong>
+                                <span>Industry insights and updates</span>
+                            </a>
+                            <a href="../../resources.html" class="dropdown-item">
+                                <strong>Case Studies</strong>
+                                <span>Client success stories</span>
+                            </a>
+                            <a href="../../resources.html" class="dropdown-item">
+                                <strong>Whitepapers</strong>
+                                <span>Technical research and analysis</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center justify-center py-16">
+        <div class="absolute inset-0 z-0">
+            <img src="https://source.unsplash.com/1600x900/?public-transport,city" alt="Public Transportation" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-blue-900/70"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fade-up">
+                Optimizing Public Transportation Systems Using Data Analytics
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+                Discover how Algolytic Data Solutions partnered with a major metropolitan city to enhance public transportation efficiency, reduce costs, and improve commuter satisfaction.
+            </p>
+            <div class="flex items-center justify-center space-x-4 text-sm text-gray-300">
+                <span>By Algolytic Data Solutions</span>
+                <span>•</span>
+                <span>15 min read</span>
+                <span>•</span>
+                <span>January 25, 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Table of Contents Sidebar -->
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-24 p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="font-bold text-lg mb-4">Table of Contents</h3>
+                    <nav class="space-y-3">
+                        <a href="#introduction" class="block text-gray-600 hover:text-blue-600 transition-all duration-300">Introduction</a>
+                        <a href="#challenges" class="block text-gray-600 hover:text-blue-600 transition-all duration-300">Challenges</a>
+                        <a href="#solution" class="block text-gray-600 hover:text-blue-600 transition-all duration-300">Our Solution</a>
+                        <a href="#implementation" class="block text-gray-600 hover:text-blue-600 transition-all duration-300">Implementation</a>
+                        <a href="#results" class="block text-gray-600 hover:text-blue-600 transition-all duration-300">Results</a>
+                        <a href="#conclusion" class="block text-gray-600 hover:text-blue-600 transition-all duration-300">Conclusion</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Article Content -->
+            <article class="lg:col-span-9 bg-white rounded-xl shadow-lg p-8">
+                <!-- Introduction Section -->
+                <section id="introduction" class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Introduction</h2>
+                    <p class="text-gray-600 mb-6">
+                        Public transportation is the backbone of urban mobility, providing millions of people with affordable and efficient travel options. However, as cities grow, public transportation systems often struggle to keep up with increasing demand, leading to overcrowding, delays, and inefficiencies. This case study explores how Algolytic Data Solutions partnered with a major metropolitan city to optimize its public transportation system using advanced data analytics.
+                    </p>
+                    <p class="text-gray-600">
+                        The city's public transportation network, which includes buses, trains, and trams, was facing significant challenges. Ridership had increased by 25% over the past decade, but the system's infrastructure and operational strategies had not kept pace. Commuters were experiencing frequent delays, overcrowded vehicles, and inconsistent service quality. The city needed a data-driven approach to modernize its public transportation system and improve the commuter experience.
+                    </p>
+                </section>
+
+                <!-- Challenges Section -->
+                <section id="challenges" class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Challenges</h2>
+                    <p class="text-gray-600 mb-6">
+                        The city's public transportation system faced several critical challenges:
+                    </p>
+                    <div class="space-y-6">
+                        <!-- Overcrowding -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Overcrowding</h3>
+                            <p class="text-gray-600">
+                                During peak hours, buses and trains were operating at 150% capacity, leading to discomfort and safety concerns for commuters. Overcrowding also increased wear and tear on vehicles, resulting in higher maintenance costs.
+                            </p>
+                        </div>
+
+                        <!-- Delays and Inefficiencies -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Delays and Inefficiencies</h3>
+                            <p class="text-gray-600">
+                                Frequent delays caused by traffic congestion, mechanical issues, and inefficient scheduling were frustrating commuters and reducing the system's reliability. On-time performance had dropped to just 65%.
+                            </p>
+                        </div>
+
+                        <!-- Lack of Data Integration -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Lack of Data Integration</h3>
+                            <p class="text-gray-600">
+                                Data from different transportation modes (buses, trains, trams) was stored in separate systems, making it difficult to analyze the system as a whole and identify areas for improvement.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Our Solution Section -->
+                <section id="solution" class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Our Solution</h2>
+                    <p class="text-gray-600 mb-6">
+                        Algolytic Data Solutions implemented a comprehensive data analytics platform to address the city's public transportation challenges. The solution included:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <img src="https://source.unsplash.com/600x400/?data,analytics" alt="Data Analytics" class="rounded-lg shadow-lg">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Data Integration and Centralization</h3>
+                            <p class="text-gray-600">
+                                We integrated data from buses, trains, and trams into a centralized platform, providing a unified view of the transportation network. This enabled real-time monitoring and analysis of system performance.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Predictive Analytics</h3>
+                            <p class="text-gray-600">
+                                Using machine learning algorithms, we developed predictive models to forecast ridership, identify potential delays, and optimize scheduling. This allowed the city to proactively address issues before they impacted commuters.
+                            </p>
+                        </div>
+                        <div>
+                            <img src="https://source.unsplash.com/600x400/?machine-learning,technology" alt="Predictive Analytics" class="rounded-lg shadow-lg">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                        <div>
+                            <img src="https://source.unsplash.com/600x400/?commuters,public-transport" alt="Commuter Experience" class="rounded-lg shadow-lg">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Commuter Experience Enhancement</h3>
+                            <p class="text-gray-600">
+                                We developed a mobile app that provided real-time updates on vehicle locations, delays, and alternative routes. The app also allowed commuters to provide feedback, enabling continuous improvement of the system.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Implementation Section -->
+                <section id="implementation" class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Implementation</h2>
+                    <p class="text-gray-600 mb-6">
+                        The implementation of our solution was carried out in three phases:
+                    </p>
+                    <div class="space-y-8">
+                        <!-- Phase 1: Data Integration -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Phase 1: Data Integration</h3>
+                            <p class="text-gray-600">
+                                We connected data sources from buses, trains, and trams to a centralized platform, enabling real-time monitoring and analysis.
+                            </p>
+                        </div>
+
+                        <!-- Phase 2: Predictive Analytics -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Phase 2: Predictive Analytics</h3>
+                            <p class="text-gray-600">
+                                We developed and deployed machine learning models to predict ridership and optimize scheduling.
+                            </p>
+                        </div>
+
+                        <!-- Phase 3: Mobile App Development -->
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-blue-600">Phase 3: Mobile App Development</h3>
+                            <p class="text-gray-600">
+                                We launched a mobile app to enhance the commuter experience and gather feedback for continuous improvement.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section id="results" class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Results</h2>
+                    <p class="text-gray-600 mb-6">
+                        The implementation of our data analytics platform delivered significant improvements:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- On-Time Performance -->
+                        <div class="bg-gray-50 p-6 rounded-lg text-center">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-3 animated-number">85%</h3>
+                            <p class="text-gray-600">On-time performance</p>
+                        </div>
+
+                        <!-- Ridership Satisfaction -->
+                        <div class="bg-gray-50 p-6 rounded-lg text-center">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-3 animated-number">90%</h3>
+                            <p class="text-gray-600">Ridership satisfaction rate</p>
+                        </div>
+
+                        <!-- Cost Savings -->
+                        <div class="bg-gray-50 p-6 rounded-lg text-center">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-3 animated-number">20%</h3>
+                            <p class="text-gray-600">Reduction in operational costs</p>
+                        </div>
+
+                        <!-- Overcrowding Reduction -->
+                        <div class="bg-gray-50 p-6 rounded-lg text-center">
+                            <h3 class="text-2xl font-bold text-blue-600 mb-3 animated-number">30%</h3>
+                            <p class="text-gray-600">Reduction in overcrowding</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Conclusion Section -->
+                <section id="conclusion" class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Conclusion</h2>
+                    <p class="text-gray-600">
+                        This case study demonstrates the transformative power of data analytics in optimizing public transportation systems. By leveraging advanced technologies, Algolytic Data Solutions helped the city improve efficiency, reduce costs, and enhance the commuter experience. Our approach serves as a model for other cities looking to modernize their public transportation networks and create smarter, more sustainable urban environments.
+                    </p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2024 Algolytic Data Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script for Progress Bar and Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Progress Bar
+            const progressBar = document.querySelector('.progress-bar');
+            window.addEventListener('scroll', () => {
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate numbers
+            const animatedNumbers = document.querySelectorAll('.animated-number');
+            animatedNumbers.forEach((number) => {
+                gsap.from(number, {
+                    scrollTrigger: {
+                        trigger: number,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse',
+                    },
+                    opacity: 0,
+                    y: 20,
+                    duration: 1,
+                    ease: 'power2.out',
+                });
+            });
+        });
+    </script>
+</body>
+</html>
