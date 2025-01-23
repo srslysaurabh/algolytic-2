@@ -1,0 +1,43 @@
+# robots.txt for Algolytic Data Solutions
+
+# Allow all crawlers
+User-agent: *
+
+# Allow access to main sections
+Allow: /
+Allow: /services/
+Allow: /about-company/
+Allow: /resources/
+Allow: /careers/
+Allow: /connect/
+Allow: /traffic-analytics/
+Allow: /data-analytics/
+Allow: /data-collection/
+
+# Prevent crawling of potential form submission endpoints
+Disallow: /*/submit/
+Disallow: /api/
+Disallow: /forms/
+
+# Prevent indexing of thank you/confirmation pages
+Disallow: /thank-you/
+Disallow: /download-confirmation/
+
+# Sitemap location
+Sitemap: https://www.algolytic.com/sitemap.xml
+
+# Crawl-delay for heavy crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Prevent media scraping bots
+User-agent: GPTBot
+Disallow: /images/
+Disallow: /assets/
+
+User-agent: ChatGPT-User
+Disallow: /images/
+Disallow: /assets/
